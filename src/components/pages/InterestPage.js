@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const InterestPage = () => {
   return (
-    <PageWrapper>
+    <PageWrapper id="interest">
       <Title>INTEREST</Title>
       <Content>The items below are my current interests.</Content>
       <ContentWrapper>
@@ -64,6 +64,7 @@ const PageWrapper = styled.div`
   align-items: center;
   /* justify-content: center; */
   height: calc(100vh - 83.5px);
+  padding-top: 73px;
 `;
 
 const Title = styled.div`

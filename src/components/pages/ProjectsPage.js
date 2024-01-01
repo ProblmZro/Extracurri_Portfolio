@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const ProjectsPage = () => {
   return (
-    <PageWrapper>
+    <PageWrapper id="projects">
       <Title>PROJECTS</Title>
       <BoxWrapper>
         <Box></Box>
@@ -21,13 +21,13 @@ const ProjectsPage = () => {
 export default ProjectsPage;
 
 const PageWrapper = styled.div`
+  height: calc(100vh - 83.5px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0px 50px;
+  padding: 73px 50px 0px 50px;
   gap: 43px;
-  /* height: 100vh; */
 `;
 
 const Title = styled.div`

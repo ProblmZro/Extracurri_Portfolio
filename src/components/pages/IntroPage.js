@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const IntroPage = () => {
   return (
-    <PageWrapper>
+    <PageWrapper id="intro">
       <IntroWrapper>
         <Intro1>Hello, I am</Intro1>
         <Intro2>Jay Moon</Intro2>

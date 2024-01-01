@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ContactPage = () => {
   return (
-    <PageWrapper>
+    <PageWrapper id="contact">
       <Title>CONTACT</Title>
       <Content>
         Please contact at any time using the methods below that are convenient
