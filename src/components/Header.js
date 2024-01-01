@@ -14,8 +14,12 @@ const Header = () => {
         <Link to="/interest">
           <div>Interest</div>
         </Link>
-        <div>Projects</div>
-        <div>Contact</div>
+        <Link to="projects">
+          <div>Projects</div>
+        </Link>
+        <Link to="/contact">
+          <div>Contact</div>
+        </Link>
       </NavBar>
     </HeaderWrapper>
   );
@@ -32,12 +36,12 @@ const HeaderWrapper = styled.div`
 
 const Logo = styled.div`
   color: #dfdfdf;
-  font-size: 32px;
+  font-size: 24px;
 `;
 
 const NavBar = styled.div`
   display: flex;
   gap: 67px;
-  font-size: 24px;
+  font-size: 20px;
   color: #adadad;
 `;

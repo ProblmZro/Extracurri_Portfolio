@@ -69,20 +69,20 @@ const PageWrapper = styled.div`
 const Title = styled.div`
   margin-top: 80px;
   color: #dfdfdf;
-  font-size: 48px;
+  font-size: 43px;
   font-weight: 600;
 `;
 
 const Content = styled.div`
   margin-top: 52px;
   color: #adadad;
-  font-size: 32px;
+  font-size: 23px;
   font-weight: 400;
 `;
 
 const ContentTitle = styled.div`
   color: #dfdfdf;
-  font-size: 36px;
+  font-size: 31px;
   font-weight: 700;
   margin-bottom: 12px;
 `;
@@ -91,7 +91,7 @@ const ContentBorder = styled.div`
   display: flex;
   justify-content: space-between;
   border-top: 3px solid #dfdfdf;
-  font-size: 24px;
+  font-size: 19px;
   font-weight: 400;
   width: 100%;
   padding-top: 22px;
