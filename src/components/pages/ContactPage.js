@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { faInstagram, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link as ScrollLink } from "react-scroll";
 
 const ContactPage = () => {
   return (
@@ -31,11 +32,30 @@ const ContactPage = () => {
           <ContentItem>@ProblmZro</ContentItem>
         </ContentBox>
       </ContentWrapper>
+      <ScrollUpButton to="introduce" smooth={true} duration={500}>
+        <ArrowIcon>&#8593;</ArrowIcon>
+      </ScrollUpButton>
     </PageWrapper>
   );
 };
 
 export default ContactPage;
+
+const ScrollUpButton = styled(ScrollLink)`
+  position: absolute;
+  bottom: calc(20px - 300vh);
+  cursor: pointer;
+
+  @media (min-width: 768px) {
+    bottom: calc(20px - 282vh);
+  }
+`;
+
+const ArrowIcon = styled.span`
+  font-size: 30px;
+  color: #dfdfdf;
+  opacity: 0.5;
+`;
 
 const PageWrapper = styled.div`
   display: flex;
@@ -43,6 +63,13 @@ const PageWrapper = styled.div`
   align-items: center;
   /* justify-content: center; */
   height: calc(100vh - 83.5px);
+  padding-top: 73px;
+
+  @media (max-width: 768px) {
+    padding-top: 0px;
+    text-align: center;
+    height: calc(var(--vh, 1vh) * 100);
+  }
 `;
 
 const Title = styled.div`
@@ -50,6 +77,10 @@ const Title = styled.div`
   color: #dfdfdf;
   font-size: 43px;
   font-weight: 600;
+
+  @media (max-width: 768px) {
+    margin-top: 40px;
+  }
 `;
 
 const Content = styled.div`
@@ -57,6 +88,11 @@ const Content = styled.div`
   color: #adadad;
   font-size: 23px;
   font-weight: 400;
+
+  @media (max-width: 768px) {
+    margin-top: 32px;
+    font-size: 18px;
+  }
 `;
 
 const ContentItem = styled.span`
@@ -90,4 +126,9 @@ const ContentWrapper = styled.div`
   justify-content: space-between;
   padding: 0px 81px 0px 81px;
   text-align: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    margin-top: 50px;
+  }
 `;

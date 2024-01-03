@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./Header";
 import ContactPage from "./pages/ContactPage";
@@ -6,9 +7,17 @@ import IntroPage from "./pages/IntroPage";
 import ProjectsPage from "./pages/ProjectsPage";
 
 function App() {
+  const setScreenSize = () => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  };
+  useEffect(() => {
+    setScreenSize();
+  });
+
   return (
     <BrowserRouter>
-      <Header />
+      <Header id="introduce" />
       <IntroPage />
       <InterestPage />
       <ProjectsPage />

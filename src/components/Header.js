@@ -5,9 +5,8 @@ import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 
 const Header = () => {
   const location = useLocation();
-  const navigate = useNavigate(); // Use useNavigate instead of useHistory
+  const navigate = useNavigate();
 
-  // Function to determine the color based on the current location
   const getNavbarColor = (path) => {
     return location.pathname === path ? "#dfdfdf" : "#adadad";
   };
@@ -19,7 +18,7 @@ const Header = () => {
   return (
     <HeaderWrapper>
       <Link to="/introduce" onClick={scrollToTop}>
-        <Logo>ProblmZro</Logo>
+        <Logo src="images/logo.svg" alt="profile" />
       </Link>
       <NavBar>
         <Link
@@ -67,19 +66,34 @@ const HeaderWrapper = styled.div`
   top: 0;
   position: sticky;
   font-family: "BM Dohyeon";
-  padding: 44px 81px 0px 81px;
+  padding: 20px;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  padding: 44px 81px 0px 81px;
+
   z-index: 300;
+
+  @media (max-width: 769px) {
+    padding: 24px 81px 20px 81px;
+    justify-content: center;
+    position: static;
+  }
 `;
 
-const Logo = styled.div`
-  color: #dfdfdf;
-  font-size: 24px;
+const Logo = styled.img`
+  height: 25px;
+  margin-top: 8px;
 `;
 
 const NavBar = styled.div`
-  display: flex;
-  gap: 67px;
-  font-size: 20px;
+  display: none; /* Initially hide on smaller screens */
+
+  @media (min-width: 769px) {
+    display: flex;
+    flex-direction: row;
+    gap: 67px;
+    font-size: 20px;
+  }
 `;

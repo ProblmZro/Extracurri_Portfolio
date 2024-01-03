@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link as ScrollLink } from "react-scroll";
 
 const InterestPage = () => {
   return (
@@ -52,11 +53,30 @@ const InterestPage = () => {
           </ContentBorder>
         </ContentBox>
       </ContentWrapper>
+      <ScrollDownButton to="projects" smooth={true} duration={500}>
+        <ArrowIcon>&#8595;</ArrowIcon>
+      </ScrollDownButton>
     </PageWrapper>
   );
 };
 
 export default InterestPage;
+
+const ScrollDownButton = styled(ScrollLink)`
+  position: absolute;
+  bottom: calc(20px - 100vh);
+  cursor: pointer;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
+
+const ArrowIcon = styled.span`
+  font-size: 30px;
+  color: #dfdfdf;
+  opacity: 0.5;
+`;
 
 const PageWrapper = styled.div`
   display: flex;
@@ -65,6 +85,12 @@ const PageWrapper = styled.div`
   /* justify-content: center; */
   height: calc(100vh - 83.5px);
   padding-top: 73px;
+
+  @media (max-width: 768px) {
+    padding-top: 0px;
+    text-align: center;
+    height: calc(var(--vh, 1vh) * 100);
+  }
 `;
 
 const Title = styled.div`
@@ -72,6 +98,10 @@ const Title = styled.div`
   color: #dfdfdf;
   font-size: 43px;
   font-weight: 600;
+
+  @media (max-width: 768px) {
+    margin-top: 40px;
+  }
 `;
 
 const Content = styled.div`
@@ -79,6 +109,11 @@ const Content = styled.div`
   color: #adadad;
   font-size: 23px;
   font-weight: 400;
+
+  @media (max-width: 768px) {
+    margin-top: 32px;
+    font-size: 18px;
+  }
 `;
 
 const ContentTitle = styled.div`
@@ -123,4 +158,10 @@ const ContentWrapper = styled.div`
   width: 100%;
   justify-content: space-between;
   padding: 0px 81px 0px 81px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    margin-top: 50px;
+    gap: 52px;
+  }
 `;
