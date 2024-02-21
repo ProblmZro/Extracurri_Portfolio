@@ -1,36 +1,55 @@
-import { useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./Header";
+// import { BrowserRouter } from "react-router-dom";
+import styled from "styled-components";
+import { useState } from "react";
 import ContactPage from "./pages/ContactPage";
 import InterestPage from "./pages/InterestPage";
 import IntroPage from "./pages/IntroPage";
 import ProjectsPage from "./pages/ProjectsPage";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
+
+const pages = [
+  <IntroPage />,
+  <InterestPage />,
+  <ProjectsPage />,
+  <ContactPage />,
+];
 
 function App() {
-  const setScreenSize = () => {
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const goToNextPage = () => {
+    setCurrentPage((current) =>
+      current === pages.length - 1 ? 0 : current + 1
+    );
   };
-  useEffect(() => {
-    setScreenSize();
-  });
 
   return (
-    <BrowserRouter>
-      <Header id="introduce" />
-      <IntroPage />
-      <InterestPage />
-      <ProjectsPage />
-      <ContactPage />
-      {/* <Routes>
-        <Route path="/introduce" element={<IntroPage />}></Route>
-        <Route path="/interest" element={<InterestPage />}></Route>
-        <Route path="/contact" element={<ContactPage />}></Route>
-        <Route path="/projects" element={<ProjectsPage />}></Route>
-        <Route path="*" element={<NotFound />}></Route>
-      </Routes> */}
-    </BrowserRouter>
+    <PageContainer>
+      {pages[currentPage]}
+      <NextBtn onClick={goToNextPage}>
+        <FontAwesomeIcon icon={faArrowDown} />
+      </NextBtn>
+    </PageContainer>
   );
 }
 
 export default App;
+
+const PageContainer = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+`;
+
+const NextBtn = styled.div`
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+`;

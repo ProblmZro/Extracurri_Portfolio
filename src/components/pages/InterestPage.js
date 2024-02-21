@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link as ScrollLink } from "react-scroll";
 
 const InterestPage = () => {
   return (
@@ -53,30 +52,11 @@ const InterestPage = () => {
           </ContentBorder>
         </ContentBox>
       </ContentWrapper>
-      <ScrollDownButton to="projects" smooth={true} duration={500}>
-        <ArrowIcon>&#8595;</ArrowIcon>
-      </ScrollDownButton>
     </PageWrapper>
   );
 };
 
 export default InterestPage;
-
-const ScrollDownButton = styled(ScrollLink)`
-  position: absolute;
-  bottom: calc(20px - 100vh);
-  cursor: pointer;
-
-  @media (min-width: 768px) {
-    display: none;
-  }
-`;
-
-const ArrowIcon = styled.span`
-  font-size: 30px;
-  color: #dfdfdf;
-  opacity: 0.5;
-`;
 
 const PageWrapper = styled.div`
   display: flex;

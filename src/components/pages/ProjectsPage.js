@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link as ScrollLink } from "react-scroll";
 
 const ProjectsPage = () => {
   return (
@@ -10,30 +9,11 @@ const ProjectsPage = () => {
         <Box></Box>
         <Box></Box>
       </BoxWrapper>
-      <ScrollDownButton to="contact" smooth={true} duration={500}>
-        <ArrowIcon>&#8595;</ArrowIcon>
-      </ScrollDownButton>
     </PageWrapper>
   );
 };
 
 export default ProjectsPage;
-
-const ScrollDownButton = styled(ScrollLink)`
-  position: absolute;
-  bottom: calc(20px - 200vh);
-  cursor: pointer;
-
-  @media (min-width: 768px) {
-    display: none;
-  }
-`;
-
-const ArrowIcon = styled.span`
-  font-size: 30px;
-  color: #dfdfdf;
-  opacity: 0.5;
-`;
 
 const PageWrapper = styled.div`
   height: calc(100vh - 83.5px);
@@ -78,8 +58,8 @@ const BoxWrapper = styled.div`
 `;
 
 const Box = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 300px;
+  height: 70%;
   opacity: 0.8;
   background: #0e0e0e;
   border-radius: 10px;

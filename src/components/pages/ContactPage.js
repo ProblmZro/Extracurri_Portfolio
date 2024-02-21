@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { faInstagram, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link as ScrollLink } from "react-scroll";
 
 const ContactPage = () => {
   return (
@@ -32,30 +31,11 @@ const ContactPage = () => {
           <ContentItem>@ProblmZro</ContentItem>
         </ContentBox>
       </ContentWrapper>
-      <ScrollUpButton to="introduce" smooth={true} duration={500}>
-        <ArrowIcon>&#8593;</ArrowIcon>
-      </ScrollUpButton>
     </PageWrapper>
   );
 };
 
 export default ContactPage;
-
-const ScrollUpButton = styled(ScrollLink)`
-  position: absolute;
-  bottom: calc(20px - 300vh);
-  cursor: pointer;
-
-  @media (min-width: 768px) {
-    bottom: calc(20px - 282vh);
-  }
-`;
-
-const ArrowIcon = styled.span`
-  font-size: 30px;
-  color: #dfdfdf;
-  opacity: 0.5;
-`;
 
 const PageWrapper = styled.div`
   display: flex;
