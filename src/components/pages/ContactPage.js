@@ -4,27 +4,36 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ContactPage = () => {
+  const handleInstagramClick = () => {
+    window.open("https://www.instagram.com/problm_zro", "_blank");
+  };
+
+  const handleGithubClick = () => {
+    window.open("https://github.com/ProblmZro", "_blank");
+  };
+
   return (
     <PageWrapper id="contact">
       <Title>CONTACT</Title>
       <Content>
-        Please contact at any time using the methods below that are convenient
-        for you.
+        Please contact using the methods below that are convenient for you.
       </Content>
       <ContentWrapper>
         <ContentBox>
           <IconWrapper>
             <FontAwesomeIcon icon={faEnvelope} />
           </IconWrapper>
-          <ContentItem>reozt599@gmail.com</ContentItem>
+          <ContentItem>
+            <a href="mailto:reozt599@gmail.com">reozt599@gmail.com</a>
+          </ContentItem>
         </ContentBox>
-        <ContentBox>
+        <ContentBox onClick={handleInstagramClick}>
           <IconWrapper>
             <FontAwesomeIcon icon={faInstagram} />
           </IconWrapper>
           <ContentItem>@problm_zro</ContentItem>
         </ContentBox>
-        <ContentBox>
+        <ContentBox onClick={handleGithubClick}>
           <IconWrapper>
             <FontAwesomeIcon icon={faGithub} />
           </IconWrapper>
@@ -42,7 +51,8 @@ const PageWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   /* justify-content: center; */
-  height: calc(100vh - 83.5px);
+  /* height: calc(100vh - 83.5px); */
+  height: 100vh;
   padding-top: 73px;
 
   @media (max-width: 768px) {
@@ -72,6 +82,7 @@ const Content = styled.div`
   @media (max-width: 768px) {
     margin-top: 32px;
     font-size: 18px;
+    display: none;
   }
 `;
 
@@ -96,6 +107,10 @@ const IconWrapper = styled.div`
   font-size: 35px;
   margin-top: 20px;
   margin-bottom: 37px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 30px;
+  }
 `;
 
 const ContentWrapper = styled.div`

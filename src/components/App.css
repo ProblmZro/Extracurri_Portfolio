@@ -16,3 +16,28 @@
   opacity: 0;
   transition: opacity 300ms ease-in-out;
 }
+
+body {
+  margin: 0;
+  overflow-y: hidden;
+}
+
+/* .inner {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 100px;
+}
+
+.bg-yellow {
+  background-color: #f7f6cf;
+}
+
+.bg-blue {
+  background-color: #b6d8f2;
+}
+
+.bg-pink {
+  background-color: #f4cfdf;
+} */

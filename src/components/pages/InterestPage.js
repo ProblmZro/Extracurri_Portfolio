@@ -1,54 +1,45 @@
 import styled from "styled-components";
+import {
+  faLaptopCode,
+  faNetworkWired,
+  faPenNib,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFigma, faPython, faReact } from "@fortawesome/free-brands-svg-icons";
 
 const InterestPage = () => {
   return (
     <PageWrapper id="interest">
-      <Title>INTEREST</Title>
-      <Content>The items below are my current interests.</Content>
+      <Title>STACKS</Title>
+      <Content>The stacks below are my current interests.</Content>
       <ContentWrapper>
         <ContentBox>
-          <ContentTitle>Skill</ContentTitle>
+          <StackIcon icon={faReact} />
+          <ContentTitle>Front-End</ContentTitle>
           <ContentBorder>
             <ContentLeftWrapper>
-              <ContentLeft>Front-End</ContentLeft>
-              <ContentLeft>A.I</ContentLeft>
-              <ContentLeft>Design</ContentLeft>
+              TypeScript&nbsp;&nbsp;&nbsp;React
+              <br />
+              NextJS&nbsp;&nbsp;&nbsp;GraphQL
             </ContentLeftWrapper>
-            <ContentRightWrapper>
-              <ContentRight>React, TypeScript</ContentRight>
-              <ContentRight>Deep Learning, Pytorch</ContentRight>
-              <ContentRight>Photoshop, Figma</ContentRight>
-            </ContentRightWrapper>
           </ContentBorder>
         </ContentBox>
         <ContentBox>
-          <ContentTitle>Hobby</ContentTitle>
+          <StackIcon icon={faPython} />
+          <ContentTitle>Artifical Intelligence</ContentTitle>
           <ContentBorder>
             <ContentLeftWrapper>
-              <ContentLeft>Sports</ContentLeft>
-              <ContentLeft>Work out</ContentLeft>
-              <ContentLeft>Fashion</ContentLeft>
+              Python&nbsp;&nbsp;&nbsp;Pytorch <br /> DeepLearing
             </ContentLeftWrapper>
-            <ContentRightWrapper>
-              <ContentRight>Soccer, Baseball, F1</ContentRight>
-              <ContentRight>Weight training</ContentRight>
-              <ContentRight>Clothes, Perfume</ContentRight>
-            </ContentRightWrapper>
           </ContentBorder>
         </ContentBox>
         <ContentBox>
-          <ContentTitle>Etc.</ContentTitle>
+          <StackIcon icon={faFigma} />
+          <ContentTitle>Design</ContentTitle>
           <ContentBorder>
             <ContentLeftWrapper>
-              <ContentLeft>Front-End</ContentLeft>
-              <ContentLeft>A.I</ContentLeft>
-              <ContentLeft>Design</ContentLeft>
+              Photoshop&nbsp;&nbsp;&nbsp;Figma
             </ContentLeftWrapper>
-            <ContentRightWrapper>
-              <ContentRight>React, TypeScript</ContentRight>
-              <ContentRight>Deep Learning, Pytorch</ContentRight>
-              <ContentRight>Photoshop, Figma</ContentRight>
-            </ContentRightWrapper>
           </ContentBorder>
         </ContentBox>
       </ContentWrapper>
@@ -63,16 +54,17 @@ const PageWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   /* justify-content: center; */
-  height: calc(100vh - 83.5px);
+  /* height: calc(100vh - 83.5px); */
+  height: 100vh;
   padding-top: 73px;
 
   @media (max-width: 768px) {
     padding-top: 0px;
     text-align: center;
-    height: calc(var(--vh, 1vh) * 100);
+    /* height: calc(var(--vh, 1vh) * 100); */
+    height: 100vh;
   }
 `;
-
 const Title = styled.div`
   margin-top: 80px;
   color: #dfdfdf;
@@ -83,7 +75,6 @@ const Title = styled.div`
     margin-top: 40px;
   }
 `;
-
 const Content = styled.div`
   margin-top: 52px;
   color: #adadad;
@@ -96,40 +87,59 @@ const Content = styled.div`
   }
 `;
 
+const StackIcon = styled(FontAwesomeIcon)`
+  color: #0047ff;
+  font-size: 68px;
+  margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
 const ContentTitle = styled.div`
   color: #dfdfdf;
-  font-size: 31px;
+  font-size: 28px;
   font-weight: 700;
   margin-bottom: 12px;
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+    text-align: left;
+  }
 `;
 
 const ContentBorder = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
   border-top: 3px solid #dfdfdf;
   font-size: 19px;
   font-weight: 400;
   width: 100%;
   padding-top: 22px;
+
+  @media (max-width: 768px) {
+    justify-content: right;
+  }
 `;
 
 const ContentBox = styled.div`
   width: 100%;
+  background-color: #232323;
+  padding: 20px;
+  border-radius: 2px;
 `;
 
 const ContentLeftWrapper = styled.div`
-  color: #dfdfdf;
-  text-align: left;
-`;
-
-const ContentRightWrapper = styled.div`
   color: #adadad;
-  text-align: right;
+  font-size: 21px;
+  text-align: left;
+
+  @media (max-width: 768px) {
+    font-size: 19px;
+    text-align: right;
+  }
 `;
-
-const ContentLeft = styled.div``;
-
-const ContentRight = styled.div``;
 
 const ContentWrapper = styled.div`
   margin-top: 80px;
