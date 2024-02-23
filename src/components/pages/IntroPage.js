@@ -6,6 +6,7 @@ const IntroPage = () => {
   return (
     <PageWrapper id="introduce">
       <IntroWrapper>
+        <Intro3>Hello, I'm</Intro3>
         <Intro1>Jay Moon</Intro1>
         <Intro2>
           a undergraduate student majoring in computer science
@@ -57,6 +58,19 @@ const IntroWrapper = styled.div`
   }
 `;
 
+const Intro3 = styled.div`
+  color: #183fbf;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: -20px;
+
+  @media (max-width: 768px) {
+    margin-top: 10px;
+    font-size: 25px;
+    margin-bottom: -10px;
+  }
+`;
+
 const Intro1 = styled.div`
   color: #dfdfdf;
   /* color: #183fbf; */
@@ -76,6 +90,7 @@ const Intro2 = styled.div`
 
   @media (max-width: 768px) {
     font-size: 18px;
+    margin-bottom: 30px;
   }
 `;
 

@@ -107,6 +107,7 @@ const IconWrapper = styled.div`
   font-size: 35px;
   margin-top: 20px;
   margin-bottom: 37px;
+  color: #183fbf;
 
   @media (max-width: 768px) {
     margin-bottom: 30px;

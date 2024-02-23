@@ -91,6 +91,7 @@ const StackIcon = styled(FontAwesomeIcon)`
   color: #0047ff;
   font-size: 68px;
   margin-bottom: 20px;
+  transition: all 0.3s ease-in-out;
 
   @media (max-width: 768px) {
     display: none;
@@ -128,6 +129,15 @@ const ContentBox = styled.div`
   background-color: #232323;
   padding: 20px;
   border-radius: 2px;
+  transition: all 3s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    background: linear-gradient(135deg, #0047ff, #232323);
+  }
+
+  &:hover ${StackIcon} {
+    color: #adadad;
+  }
 `;
 
 const ContentLeftWrapper = styled.div`
