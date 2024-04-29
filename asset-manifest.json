@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Extracurri_Portfolio/static/css/main.2d5dba77.css",
-    "main.js": "/Extracurri_Portfolio/static/js/main.98be18b5.js",
+    "main.js": "/Extracurri_Portfolio/static/js/main.7170ea03.js",
     "static/media/BMDOHYEON_ttf.ttf": "/Extracurri_Portfolio/static/media/BMDOHYEON_ttf.d20f6c68004f7588ee16.ttf",
     "index.html": "/Extracurri_Portfolio/index.html",
     "main.2d5dba77.css.map": "/Extracurri_Portfolio/static/css/main.2d5dba77.css.map",
-    "main.98be18b5.js.map": "/Extracurri_Portfolio/static/js/main.98be18b5.js.map"
+    "main.7170ea03.js.map": "/Extracurri_Portfolio/static/js/main.7170ea03.js.map"
   },
   "entrypoints": [
     "static/css/main.2d5dba77.css",
-    "static/js/main.98be18b5.js"
+    "static/js/main.7170ea03.js"
   ]
 }
