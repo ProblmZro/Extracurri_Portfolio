@@ -1,21 +1,21 @@
 import styled, { keyframes } from "styled-components";
-import { faComputerMouse } from "@fortawesome/free-solid-svg-icons";
+import { faPlane } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 
 const IntroPage = () => {
   return (
-    <PageWrapper id="introduce">
+    <PageWrapper id="introduce" key={1}>
       <IntroWrapper>
-        <Intro3>Hello, I'm</Intro3>
-        <Intro1>Jay Moon</Intro1>
-        <Intro2>
-          a undergraduate student majoring in computer science
-          <br /> and engineering at University of Seoul
-        </Intro2>
+        <Intro3>2020920020 컴퓨터과학부 문재영</Intro3>
+        <Intro1>나를 찾아가는 과정</Intro1>
+        <Intro2>2023학년도 비교과교육 프로그램 참여후기</Intro2>
       </IntroWrapper>
-      <ProfileImg src="images/profile.svg" alt="profile" />
       <ScrollIconWrapper>
-        <ScrollIcon icon={faComputerMouse} />
+        <Link to="projects">
+          <ScrollIcon icon={faPlane} />
+          <PlaneText>Click!</PlaneText>
+        </Link>
       </ScrollIconWrapper>
     </PageWrapper>
   );
@@ -25,51 +25,16 @@ export default IntroPage;
 
 const PageWrapper = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   height: 100vh;
-  overflow: hidden;
-  position: relative;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
 
   @media (max-width: 768px) {
-    flex-direction: column;
-    text-align: center;
   }
 `;
 
-const ProfileImg = styled.img`
-  height: 100%;
-  object-fit: contain;
-  padding-right: 0;
-
-  @media (max-width: 768px) {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-`;
-
-const IntroWrapper = styled.div`
-  padding-left: 121px;
-
-  @media (max-width: 768px) {
-    padding-top: 20px;
-    padding-left: 0;
-  }
-`;
-
-const Intro3 = styled.div`
-  color: #183fbf;
-  font-size: 30px;
-  font-weight: 500;
-  margin-bottom: -20px;
-
-  @media (max-width: 768px) {
-    margin-top: 10px;
-    font-size: 25px;
-    margin-bottom: -10px;
-  }
-`;
+const IntroWrapper = styled.div``;
 
 const Intro1 = styled.div`
   color: #dfdfdf;
@@ -79,7 +44,7 @@ const Intro1 = styled.div`
   margin-bottom: 16px;
 
   @media (max-width: 768px) {
-    font-size: 70px;
+    font-size: 46px;
   }
 `;
 
@@ -90,7 +55,17 @@ const Intro2 = styled.div`
 
   @media (max-width: 768px) {
     font-size: 18px;
-    margin-bottom: 30px;
+  }
+`;
+
+const Intro3 = styled.div`
+  color: #adadad;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 10px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
   }
 `;
 
@@ -115,7 +90,13 @@ const scrollAnimation = keyframes`
 const ScrollIcon = styled(FontAwesomeIcon)`
   font-size: 25px;
   color: #dfdfdf;
-  position: absolute;
   transform: translateX(-50%);
-  animation: ${scrollAnimation} 1s infinite alternate;
+  animation: ${scrollAnimation} 1.2s infinite alternate;
+`;
+
+const PlaneText = styled.div`
+  color: #dfdfdf;
+  margin-top: 10px;
+  transform: translateX(-50%);
+  animation: ${scrollAnimation} 1.2s infinite alternate;
 `;
