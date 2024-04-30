@@ -8,7 +8,7 @@ const IntroPage = () => {
     <PageWrapper id="introduce" key={1}>
       <IntroWrapper>
         <Intro3>2020920020 컴퓨터과학부 문재영</Intro3>
-        <Intro1>나를 찾아가는 과정</Intro1>
+        <Intro1>나를 찾아가는 여정</Intro1>
         <Intro2>2023학년도 비교과교육 프로그램 참여후기</Intro2>
       </IntroWrapper>
       <ScrollIconWrapper>

@@ -7,9 +7,9 @@ const Project2 = () => {
     { id: "proj2_2", title: "출발하기 전" },
     { id: "proj2_3", title: "덴마크 이해하기" },
     { id: "proj2_4", title: "덴마크의 IT와 창업" },
-    { id: "proj2_5", title: "덴마크에서의 느낀점" },
+    { id: "proj2_5", title: "덴마크 느낀 점" },
     { id: "proj2_6", title: "스웨덴 이해하기" },
-    { id: "proj2_7", title: "스웨덴의 창업과 느낀점" },
+    { id: "proj2_7", title: "스웨덴의 창업과 느낀 점" },
     { id: "proj2_8", title: "함께한 UnicOrnS" },
     { id: "proj2_9", title: "원정을 마치면서" },
   ];
@@ -341,7 +341,7 @@ const Project2 = () => {
           교훈을 준 장소였다. 이외에도 주변 쇼핑과 말뫼 시청 등을 구경하여
           스톡홀름에 가기 전에 스웨덴을 잠시 맛볼 수 있는 좋은 하루였다.
         </p>
-        <ContentTitle id="proj2_5">덴마크에서의 느낀점</ContentTitle>
+        <ContentTitle id="proj2_5">덴마크에서의 느낀 점</ContentTitle>
         <ContentImgWrapper>
           <ContentImg src="images/pro2/22.png" />
         </ContentImgWrapper>
@@ -412,7 +412,7 @@ const Project2 = () => {
           가보면서 관심 없던 분야에 대한 새로운 접근이 내 시야를 확장해 주는
           좋은 경험이었다.
         </p>
-        <ContentTitle id="proj2_7">스웨덴의 창업과 느낀점</ContentTitle>
+        <ContentTitle id="proj2_7">스웨덴의 창업과 느낀 점</ContentTitle>
         <p>
           또 저녁에 몬스터 치킨에 방문하여 대표님과의 인터뷰를 통해 실제로
           창업을 준비할 때 나를 포함한 3명이 같이 준비한 경험이 있어 동업과
@@ -515,16 +515,17 @@ const MainImg = styled.img`
 const Title = styled.div`
   position: absolute;
   top: 20%;
-  /* margin-top: 200px; */
   color: #dfdfdf;
   font-size: 60px;
   font-weight: 600;
   z-index: 250;
-
+  @media (max-width: 1200px) {
+    font-size: 40px;
+    top: 10%;
+  }
   @media (max-width: 768px) {
     font-size: 20px;
     top: 5%;
-    /* margin-top: 50px; */
   }
 `;
 
@@ -534,7 +535,10 @@ const SubTitle = styled.div`
   color: #dfdfdf;
   font-size: 36px;
   z-index: 250;
-  /* font-weight: 600; */
+  @media (max-width: 1200px) {
+    font-size: 25px;
+    top: 30%;
+  }
   @media (max-width: 768px) {
     font-size: 15px;
     top: 12%;
@@ -545,16 +549,22 @@ const ContentWrapper = styled.div`
   margin: 0px 340px 0px 340px;
 
   & > p {
-    font-size: 20px;
+    font-size: 19px;
     color: #dfdfdf;
-    line-height: 38px;
+    line-height: 35px;
     margin-top: 20px;
     margin-bottom: 20px; /* 문단 간의 간격 조절 */
+  }
+  @media (max-width: 1200px) {
+    margin: 0px 200px 200px 200px;
+    & > p {
+      font-size: 17px;
+      line-height: 30px;
+    }
   }
 
   @media (max-width: 768px) {
     margin: 30px;
-
     & > p {
       font-size: 15px;
       line-height: 23px;

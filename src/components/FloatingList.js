@@ -41,8 +41,12 @@ const FloatBtnWrapper = styled.div`
   /* text-align: right; */
   padding-left: 10px;
   position: fixed;
-  left: 40px;
-  bottom: 20%;
+  right: 8%;
+  top: 20%;
+  @media (max-width: 1200px) {
+    gap: 8px;
+    right: 5%;
+  }
   @media (max-width: 768px) {
     display: none;
   }
@@ -51,7 +55,7 @@ const FloatBtnWrapper = styled.div`
 const FloatBtn = styled.div`
   cursor: pointer;
   color: #dfdfdf;
-  font-size: 18px;
+  font-size: 16px;
   opacity: 0.8;
   &:hover {
     color: white;
@@ -66,8 +70,8 @@ const UpIcon = styled(FontAwesomeIcon)`
   cursor: pointer;
   font-size: 18px;
   position: fixed;
-  right: 40px;
-  bottom: 20%;
+  right: 10%;
+  bottom: 10%;
   opacity: 0.8;
   border-radius: 50%;
   padding: 20px;
@@ -76,9 +80,12 @@ const UpIcon = styled(FontAwesomeIcon)`
     font-weight: 500;
     opacity: 1;
   }
+  @media (max-width: 1200px) {
+    right: 5%;
+  }
 
   @media (max-width: 768px) {
-    right: 20px;
+    right: 5%;
     bottom: 5%;
   }
 `;

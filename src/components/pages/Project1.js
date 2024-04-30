@@ -7,7 +7,7 @@ const Project1 = () => {
     { id: "proj3_2", title: "활동 방식" },
     { id: "proj3_3", title: "활동 내용" },
     { id: "proj3_4", title: "최종 퀴즈" },
-    { id: "proj3_5", title: "느낀점" },
+    { id: "proj3_5", title: "느낀 점" },
     { id: "proj3_6", title: "활동 후의 나" },
   ];
 
@@ -70,7 +70,7 @@ const Project1 = () => {
           개념에 대해 파악할 수 있었고, 최종 프로젝트 퀴즈를 통해서 프로젝트
           일련의 과정을 이해할 수 있었습니다.
         </p>
-        <ContentTitle id="proj3_5">느낀점</ContentTitle>
+        <ContentTitle id="proj3_5">느낀 점</ContentTitle>
         <ContentImgWrapper>
           <ContentImg src="images/pro1/6.png" />
         </ContentImgWrapper>
@@ -135,16 +135,17 @@ const MainImg = styled.img`
 const Title = styled.div`
   position: absolute;
   top: 20%;
-  /* margin-top: 200px; */
   color: #dfdfdf;
   font-size: 60px;
   font-weight: 600;
   z-index: 250;
-
+  @media (max-width: 1200px) {
+    font-size: 40px;
+    top: 10%;
+  }
   @media (max-width: 768px) {
     font-size: 20px;
     top: 5%;
-    /* margin-top: 50px; */
   }
 `;
 
@@ -154,7 +155,10 @@ const SubTitle = styled.div`
   color: #dfdfdf;
   font-size: 36px;
   z-index: 250;
-  /* font-weight: 600; */
+  @media (max-width: 1200px) {
+    font-size: 25px;
+    top: 30%;
+  }
   @media (max-width: 768px) {
     font-size: 15px;
     top: 12%;
@@ -165,16 +169,22 @@ const ContentWrapper = styled.div`
   margin: 0px 340px 0px 340px;
 
   & > p {
-    font-size: 20px;
+    font-size: 19px;
     color: #dfdfdf;
-    line-height: 38px;
+    line-height: 35px;
     margin-top: 20px;
     margin-bottom: 20px; /* 문단 간의 간격 조절 */
+  }
+  @media (max-width: 1200px) {
+    margin: 0px 200px 200px 200px;
+    & > p {
+      font-size: 17px;
+      line-height: 30px;
+    }
   }
 
   @media (max-width: 768px) {
     margin: 30px;
-
     & > p {
       font-size: 15px;
       line-height: 23px;

@@ -163,16 +163,17 @@ const MainImg = styled.img`
 const Title = styled.div`
   position: absolute;
   top: 20%;
-  /* margin-top: 200px; */
   color: #dfdfdf;
   font-size: 60px;
   font-weight: 600;
   z-index: 250;
-
+  @media (max-width: 1200px) {
+    font-size: 40px;
+    top: 10%;
+  }
   @media (max-width: 768px) {
     font-size: 20px;
     top: 5%;
-    /* margin-top: 50px; */
   }
 `;
 
@@ -182,7 +183,10 @@ const SubTitle = styled.div`
   color: #dfdfdf;
   font-size: 36px;
   z-index: 250;
-  /* font-weight: 600; */
+  @media (max-width: 1200px) {
+    font-size: 25px;
+    top: 30%;
+  }
   @media (max-width: 768px) {
     font-size: 15px;
     top: 12%;
@@ -193,16 +197,22 @@ const ContentWrapper = styled.div`
   margin: 0px 340px 0px 340px;
 
   & > p {
-    font-size: 20px;
+    font-size: 19px;
     color: #dfdfdf;
-    line-height: 38px;
+    line-height: 35px;
     margin-top: 20px;
     margin-bottom: 20px; /* 문단 간의 간격 조절 */
+  }
+  @media (max-width: 1200px) {
+    margin: 0px 200px 200px 200px;
+    & > p {
+      font-size: 17px;
+      line-height: 30px;
+    }
   }
 
   @media (max-width: 768px) {
     margin: 30px;
-
     & > p {
       font-size: 15px;
       line-height: 23px;
