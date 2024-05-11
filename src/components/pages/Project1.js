@@ -169,14 +169,14 @@ const ContentWrapper = styled.div`
   margin: 0px 340px 0px 340px;
 
   & > p {
-    font-size: 19px;
+    font-size: 18px;
     color: #dfdfdf;
-    line-height: 35px;
+    line-height: 33px;
     margin-top: 20px;
     margin-bottom: 20px; /* 문단 간의 간격 조절 */
   }
   @media (max-width: 1200px) {
-    margin: 0px 200px 200px 200px;
+    margin: 0px 200px 0px 200px;
     & > p {
       font-size: 17px;
       line-height: 30px;

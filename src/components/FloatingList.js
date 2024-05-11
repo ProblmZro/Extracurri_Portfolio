@@ -62,6 +62,9 @@ const FloatBtn = styled.div`
     font-weight: 500;
     opacity: 1;
   }
+  @media (max-width: 1200px) {
+    font-size: 13px;
+  }
 `;
 
 const UpIcon = styled(FontAwesomeIcon)`
