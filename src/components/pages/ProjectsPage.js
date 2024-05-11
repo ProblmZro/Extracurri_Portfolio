@@ -1,26 +1,34 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { projects } from "../projectInfo";
+import { motion } from "framer-motion";
 
 const ProjectsPage = () => {
   return (
-    <PageWrapper id="projects">
-      <Title>여정 리스트</Title>
-      <BoxWrapper>
-        {projects.lists.map((list, i) => {
-          return (
-            <Link to={`/${list.id}`}>
-              <Box>
-                <IntroTitle>{list.title}</IntroTitle>
-                <IntroDate>{list.date}</IntroDate>
-                <IntroImg src={list.img} />
-                <IntroContent>{list.content}</IntroContent>
-              </Box>
-            </Link>
-          );
-        })}
-      </BoxWrapper>
-    </PageWrapper>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.7 }}
+    >
+      <PageWrapper id="projects">
+        <Title>여정 리스트</Title>
+        <BoxWrapper>
+          {projects.lists.map((list, i) => {
+            return (
+              <Link to={`/${list.id}`}>
+                <Box>
+                  <IntroTitle>{list.title}</IntroTitle>
+                  <IntroDate>{list.date}</IntroDate>
+                  <IntroImg src={list.img} />
+                  <IntroContent>{list.content}</IntroContent>
+                </Box>
+              </Link>
+            );
+          })}
+        </BoxWrapper>
+      </PageWrapper>
+    </motion.div>
   );
 };
 

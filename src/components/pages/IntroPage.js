@@ -2,22 +2,32 @@ import styled, { keyframes } from "styled-components";
 import { faPlane } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import PollenScreen from "../PollenScreen";
 
 const IntroPage = () => {
   return (
-    <PageWrapper id="introduce" key={1}>
-      <IntroWrapper>
-        <Intro3>2020920020 컴퓨터과학부 문재영</Intro3>
-        <Intro1>나를 찾아가는 여정</Intro1>
-        <Intro2>2023학년도 비교과교육 프로그램 참여후기</Intro2>
-      </IntroWrapper>
-      <ScrollIconWrapper>
-        <Link to="projects">
-          <ScrollIcon icon={faPlane} />
-          <PlaneText>Click!</PlaneText>
-        </Link>
-      </ScrollIconWrapper>
-    </PageWrapper>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.7 }}
+    >
+      <PollenScreen style={{ overflow: "hidden" }}></PollenScreen>
+      <PageWrapper id="introduce" key={1}>
+        <IntroWrapper>
+          <Intro3>2020920020 컴퓨터과학부 문재영</Intro3>
+          <Intro1>나를 찾아가는 여정</Intro1>
+          <Intro2>2023학년도 비교과교육 프로그램 참여후기</Intro2>
+        </IntroWrapper>
+        <ScrollIconWrapper>
+          <Link to="projects">
+            <ScrollIcon icon={faPlane} />
+            <PlaneText>Click!</PlaneText>
+          </Link>
+        </ScrollIconWrapper>
+      </PageWrapper>
+    </motion.div>
   );
 };
 
